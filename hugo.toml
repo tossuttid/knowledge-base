@@ -1,0 +1,4 @@
+baseURL = 'https://example.org/'
+languageCode = 'es-ar'
+title = 'Apuntes sarampuela'
+theme = 'apuntes'

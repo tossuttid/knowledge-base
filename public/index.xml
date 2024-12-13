@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Apuntes sarampuela</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on Apuntes sarampuela</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Sun, 08 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dominando Ensamblador del Z80</title>
+      <link>http://localhost:1313/dez80/</link>
+      <pubDate>Sun, 08 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dez80/</guid>
+      <description>videos&#xA;Nivel 1: Teoría, Práctica;&#xA;Nivel 2: Teoría, Práctica;&#xA;Nivel 3: Teoría, Práctica;&#xA;1t001&#xA;Ciclo de ejecución de la CPU Fetch - Decode - Execute&#xA;RAM: FFFF = 65536 b&#xA;1t002, 1t003&#xA;Binario y hexadecimal El sistema binario representa la forma en que las computadoras almacenan información (bi-estables). Y el hexadecimal proporciona una forma compacta y legible de representar estos números. Cada dígito hexadecimal representa cuatro dígitos binarios (nibble).&#xA;Conversiones De binario a decimal - De decimal a binario</description>
+    </item>
+  </channel>
+</rss>

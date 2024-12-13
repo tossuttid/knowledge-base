@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Dominando Ensamblador del Z80 | My New Hugo Site</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+
+
+      <script src="/js/main.js"></script>
+
+
+</head>
+<body>
+    <article class="markdown-body">
+        
+  <h1>Dominando Ensamblador del Z80</h1>
+
+  
+  
+  <time datetime="2024-12-08T00:00:00&#43;00:00">December 8, 2024</time>
+
+  <p><em>1t001</em></p>
+<h3 id="ciclo-de-ejecución-de-la-cpu">Ciclo de ejecución de la CPU</h3>
+<ul>
+<li>![[1732973864648.jpg|500]]</li>
+<li>Fetch-Decode-Execute</li>
+<li>RAM: FFFF = 65536 b</li>
+</ul>
+<hr>
+<p><em>1t002</em></p>
+<h3 id="binario-y-hexadecimal">Binario y hexadecimal</h3>
+<p>El sistema binario representa la forma en que las computadoras almacenan información (bi-estables). Y el hexadecimal proporciona una forma compacta y legible de representar estos números. Cada dígito hexadecimal representa cuatro dígitos binarios (nibble).</p>
+<h4 id="conversiones">Conversiones</h4>
+<p>De binario y hex a decimal es facil, simplemente multiplicamos lo que representa cada cabecera</p>
+<p>De dec a bin</p>
+<p>De dec a hex (dividir por 16, restos ordenar)</p>
+<p>De bin y hex a bin y hex lo podes sacar de la tablita (checkear)</p>
+<p>que pasa si hay mas de 15 digitos?</p>
+<table>
+  <thead>
+      <tr>
+          <th>Hex</th>
+          <th>Binario</th>
+          <th>Hex</th>
+          <th>Binario</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>0000</td>
+          <td>8</td>
+          <td>1000</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>0001</td>
+          <td>9</td>
+          <td>1001</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>0010</td>
+          <td>A</td>
+          <td>1010</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>0011</td>
+          <td>B</td>
+          <td>1011</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>0100</td>
+          <td>C</td>
+          <td>1100</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>0101</td>
+          <td>D</td>
+          <td>1101</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>0110</td>
+          <td>E</td>
+          <td>1110</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>0111</td>
+          <td>F</td>
+          <td>1111</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><em>1t003</em></p>
+<h3 id="memoria-de-video">Memoria de video</h3>
+<p>Hay una parte de la memoria destinada a guardar la información de los píxeles en pantalla. Las imágenes están estructuradas en grupos de píxeles que el CRTC va leyendo de la memoria y enviando al monitor.</p>
+<ul>
+<li>Por defecto arranca en C000</li>
+<li>Se puede cambiar esta dirección inicial</li>
+</ul>
+<hr>
+<p><em>1t003</em></p>
+<h3 id="memoria-de-video-1">Memoria de video</h3>
+<p>![[h3.jpg]]</p>
+<p>Particularizado a la organización y formato del amstrad, pero el concepto funciona igual para los demás ordenadores.</p>
+<h4 id="funcionamiento">Funcionamiento</h4>
+<p>[[Pasted image 20241117013059.png|diagrama crtc]]</p>
+<p>[[Pasted image 20241117014746.png|diagrama crtc 2]]</p>
+<h4 id="refresco-de-pantalla">Refresco de pantalla</h4>
+<p>50 hz</p>
+<p>Explica cómo arreglar el flickering.</p>
+<h3 id="el-formato-de-pixeles">El formato de pixeles</h3>
+<p>![[h3.jpg]]</p>
+<p>Hay una parte de la memoria que está reservada para guardar información de los píxeles en pantalla. Las imágenes que vemos en pantalla están formadas por grupos de píxeles que el crtc va leyendo de la memoria y enviando al monitor.</p>
+<p>Tiene que haber reglas de cómo poner los datos en memoria para la congruencia de colores.</p>
+<h4 id="formatos-hipotéticos">Formatos hipotéticos</h4>
+<p>![[Pasted image 20241118175154.png]]</p>
+<p>![[Pasted image 20241118181230.png]]</p>
+<h4 id="formatos-reales">Formatos reales</h4>
+<p>Hay distintos modos, más resolución menos colores, más colores menos resolución.</p>
+<h5 id="modo-1">Modo 1</h5>
+<p>![[Pasted image 20241118181758.png]]</p>
+<p>Se ordenan al reves de como se muestra, 01, es 10</p>
+<p>Explica una técnica para codificar en hexadecimal muy creativa, verla cuando nencesite.</p>
+<h3 id="la-distribución-de-la-memoria-de-video">La distribución de la memoria de video</h3>
+<p>![[h3.jpg]]</p>
+<p>Son 16000 bytes, 320 x 200 pixeles, tenemos que saber dónde está cada uno.</p>
+<h4 id="caracteres">Caracteres</h4>
+<p>25 x 40, cada caracter tiene 8 x 8 pixeles</p>
+<p>Es todo un tema, no tiene dos dimensiones, cada fila se rellena y después va la siguiente.</p>
+<h4 id="mapa-de-memoria">Mapa de memoria</h4>
+<p>![[Pasted image 20241119104651.png]]</p>
+<p>Son posiciones del primer byte (el más a la izquierda de la pantalla) de cada una de las filas de toda la pantalla.</p>
+<p>Como ya sabemos que cada fila tiene 80 bytes, 50 en hexa.</p>
+<p>Si agarramos el primer byte, los 50 de la fila son todos consecutivos</p>
+<p>![[Pasted image 20241119105308.png]]</p>
+<p>Este otro mapa usa caracteres en lugar de pixeles.</p>
+<p>Hay más bytes que no use usan para pintar (spern)</p>
+<p>WIP</p>
+<h3 id="instrucciones-de-z80">Instrucciones de z80</h3>
+<p>![[h3.jpg]]</p>
+<p><a href="https://clrhome.org/table/">https://clrhome.org/table/</a></p>
+<p>![[Pasted image 20241119121935.png]]</p>
+<h3 id="reto-pintar-un-pixel-rojo"><strong>RETO</strong>: Pintar un pixel rojo</h3>
+<p>![[h3.jpg]]</p>
+<pre tabindex="0"><code>3E 88 32 00 C0 18 FE
+</code></pre><h3 id="de-2-en-2">De 2 en 2</h3>
+<p>![[h3.jpg]]</p>
+<pre tabindex="0"><code>21 8888
+22 00C0
+18 FE
+</code></pre><h3 id="reto-domina-el-formato"><strong>RETO</strong>: Domina el formato</h3>
+<p>![[h3.jpg]]</p>
+<p>4px rojos</p>
+<pre tabindex="0"><code>3E FF 32 00 C0 18 FE
+</code></pre><p>24px, x4 grupos mismo color, rojo cyan amarillo, 21 bonus</p>
+<pre tabindex="0"><code>21 FF F0 22 00 C0 21 0F F0 22 02 C0 21 0F FF 22 04 C0 18 FE
+
+Disassembly curiousity
+
+FF F0 0F F0 0F FF
+</code></pre><p>lo mismo que la anterior en grupos de 2px (12 total), 3e 21 bonus</p>
+<pre tabindex="0"><code>3E F3 32 00 C0 21 C3 CF 22 01 C0 18 FE
+
+F3 C3 CF
+</code></pre><p>8px, cada uno junto de color distinto</p>
+<pre tabindex="0"><code>21 BC 5B 22 00 C0 18 FE
+
+BC 5B
+</code></pre><p>80px dibujo libre, todos los colores</p>
+<pre tabindex="0"><code>21 FF 7F 22 00 C0 21 3F 1F 22 02 C0
+21 0F 87 22 04 C0 21 C3 E1 22 06 C0
+21 F0 70 22 08 C0 21 30 10 22 0A C0
+21 00 88 22 0C C0 21 CC EE 22 0E C0
+
+21 FF 7F 22 10 C0 21 3F 1F 22 12 C0
+21 0F 87 22 14 C0 21 C3 E1 22 16 C0
+21 F0 70 22 18 C0 21 30 10 22 1A C0
+21 00 88 22 1C C0 21 CC EE 22 1E C0
+
+18 FE
+</code></pre><hr>
+
+  
+
+
+    </article>
+</body>
+</html>
