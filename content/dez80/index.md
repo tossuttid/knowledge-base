@@ -36,16 +36,47 @@ https://clrhome.org/table/
   <tr>
     <th>Instrucción</th>
     <th>Operandos</th>
+    <th>Instrucción</th>
+    <th>Operandos</th>
   </tr>
   <tr>
     <td>3E</td>
     <td>00</td>
+    <td>32<br></td>
+    <td>00FF</td>
   </tr>
   <tr>
+    <td colspan="2">Ensamblador</td>
     <td colspan="2">Ensamblador</td>
   </tr>
   <tr>
     <td colspan="2">ld a, 00</td>
+    <td colspan="2">ld (FF00), a</td>
+  </tr>
+</tbody>
+</table>
+
+<table><thead></thead>
+<tbody>
+  <tr>
+    <th>Instrucción</th>
+    <th>Operandos</th>
+    <th>Instrucción</th>
+    <th>Operandos</th>
+  </tr>
+  <tr>
+    <td>21<br></td>
+    <td>00FF</td>
+    <td>22</td>
+    <td>00FF</td>
+  </tr>
+  <tr>
+    <td colspan="2">Ensamblador</td>
+    <td colspan="2">Ensamblador</td>
+  </tr>
+  <tr>
+    <td colspan="2">ld hl, FF00</td>
+    <td colspan="2">ld FF00, hl</td>
   </tr>
 </tbody>
 </table>
@@ -57,14 +88,14 @@ https://clrhome.org/table/
     <th>Operandos</th>
   </tr>
   <tr>
-    <td>32<br></td>
-    <td>00FF</td>
+    <td>18<br></td>
+    <td>00<br></td>
   </tr>
   <tr>
     <td colspan="2">Ensamblador</td>
   </tr>
   <tr>
-    <td colspan="2">ld (FF00), a</td>
+    <td colspan="2">jr 00<br></td>
   </tr>
 </tbody>
 </table>
@@ -486,6 +517,8 @@ Mapa de memoria de video
 
 ---
 
+*1p001*
+
 
 
 ### **RETO**: Pintar un pixel rojo
@@ -507,8 +540,6 @@ Mapa de memoria de video
 ```
 
 ### **RETO**: Domina el formato
-
-![[h3.jpg]]
 
 4px rojos
 

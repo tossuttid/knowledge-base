@@ -47,16 +47,47 @@
   <tr>
     <th>Instrucción</th>
     <th>Operandos</th>
+    <th>Instrucción</th>
+    <th>Operandos</th>
   </tr>
   <tr>
     <td>3E</td>
     <td>00</td>
+    <td>32<br></td>
+    <td>00FF</td>
   </tr>
   <tr>
+    <td colspan="2">Ensamblador</td>
     <td colspan="2">Ensamblador</td>
   </tr>
   <tr>
     <td colspan="2">ld a, 00</td>
+    <td colspan="2">ld (FF00), a</td>
+  </tr>
+</tbody>
+</table>
+
+<table><thead></thead>
+<tbody>
+  <tr>
+    <th>Instrucción</th>
+    <th>Operandos</th>
+    <th>Instrucción</th>
+    <th>Operandos</th>
+  </tr>
+  <tr>
+    <td>21<br></td>
+    <td>00FF</td>
+    <td>22</td>
+    <td>00FF</td>
+  </tr>
+  <tr>
+    <td colspan="2">Ensamblador</td>
+    <td colspan="2">Ensamblador</td>
+  </tr>
+  <tr>
+    <td colspan="2">ld hl, FF00</td>
+    <td colspan="2">ld FF00, hl</td>
   </tr>
 </tbody>
 </table>
@@ -68,14 +99,14 @@
     <th>Operandos</th>
   </tr>
   <tr>
-    <td>32<br></td>
-    <td>00FF</td>
+    <td>18<br></td>
+    <td>00<br></td>
   </tr>
   <tr>
     <td colspan="2">Ensamblador</td>
   </tr>
   <tr>
-    <td colspan="2">ld (FF00), a</td>
+    <td colspan="2">jr 00<br></td>
   </tr>
 </tbody>
 </table>
@@ -515,6 +546,7 @@
 <li>Cada fila de pixeles ocupa 2k = 2048 dec = 800 hex</li>
 </ul>
 <hr>
+<p><em>1p001</em></p>
 <h3 id="reto-pintar-un-pixel-rojo"><strong>RETO</strong>: Pintar un pixel rojo</h3>
 <p>![[h3.jpg]]</p>
 <pre tabindex="0"><code>3E 88 32 00 C0 18 FE
@@ -524,7 +556,6 @@
 22 00C0
 18 FE
 </code></pre><h3 id="reto-domina-el-formato"><strong>RETO</strong>: Domina el formato</h3>
-<p>![[h3.jpg]]</p>
 <p>4px rojos</p>
 <pre tabindex="0"><code>3E FF 32 00 C0 18 FE
 </code></pre><p>24px, x4 grupos mismo color, rojo cyan amarillo, 21 bonus</p>
