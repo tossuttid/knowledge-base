@@ -11,6 +11,17 @@
       <script src="/js/main.js"></script>
 
 
+  
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+  
 </head>
 <body>
     <article class="markdown-body">
@@ -20,11 +31,56 @@
 <p>Nivel 2: <a href="">Teoría</a>, <a href="">Práctica</a>;</p>
 <p>Nivel 3: <a href="">Teoría</a>, <a href="">Práctica</a>;</p>
 <hr>
-<p><em>1t001</em></p>
+<p><em>1t001, 1t007</em></p>
 <h2 id="ciclo-de-ejecución-de-la-cpu">Ciclo de ejecución de la CPU</h2>
-<p><img src="ciclo_ejecucion.jpg" alt="hola"></p>
+<p><img src="ciclo_ejecucion.png" alt="hola"></p>
 <p>Fetch - Decode - Execute</p>
 <p>RAM: FFFF = 65536 b</p>
+<h2 id="instrucciones-de-z80">Instrucciones de z80</h2>
+<p><a href="https://clrhome.org/table/">https://clrhome.org/table/</a></p>
+<h3 id="las-que-usaremos-en-este-nivel">Las que usaremos en este nivel</h3>
+
+
+
+<table><thead></thead>
+<tbody>
+  <tr>
+    <th>Instrucción</th>
+    <th>Operandos</th>
+  </tr>
+  <tr>
+    <td>3E</td>
+    <td>00</td>
+  </tr>
+  <tr>
+    <td colspan="2">Ensamblador</td>
+  </tr>
+  <tr>
+    <td colspan="2">ld a, 00</td>
+  </tr>
+</tbody>
+</table>
+
+<table><thead></thead>
+<tbody>
+  <tr>
+    <th>Instrucción</th>
+    <th>Operandos</th>
+  </tr>
+  <tr>
+    <td>32<br></td>
+    <td>00FF</td>
+  </tr>
+  <tr>
+    <td colspan="2">Ensamblador</td>
+  </tr>
+  <tr>
+    <td colspan="2">ld (FF00), a</td>
+  </tr>
+</tbody>
+</table>
+
+
 <hr>
 <p><em>1t002, 1t003</em></p>
 <h2 id="binario-y-hexadecimal">Binario y hexadecimal</h2>
@@ -97,7 +153,7 @@
 <p><em>1t004, 1t005, 1t006</em></p>
 <h2 id="memoria-de-video">Memoria de video</h2>
 <p>Parte de la memoria destinada a guardar la información de los píxeles en pantalla. Las imágenes están estructuradas en grupos de píxeles que el CRTC va leyendo de la memoria y enviando al monitor.</p>
-<p>Por defecto arranca en C000</p>
+<p>Por defecto arranca en C000 y ocupa 16000 bytes</p>
 <p>50hz refresco, produce parpadeo (flickering)</p>
 <h2 id="formato-de-pixeles">Formato de pixeles</h2>
 <p>Es el cómo organizamos y entendemoms la información guardada en la memoria de video.</p>
@@ -134,7 +190,11 @@
 
 <p>Cada caracter tiene ocho pixeles por lado.</p>
 <p>···</p>
-<p>Las imágenes en pantallas poseen dos dimensiones, pero la memoria solamente una, esa ristra <img src="ristra.png" alt="Ristra"> se llena de a fila de pixeles por cada fila de caracteres.</p>
+<p>La pantalla posee dos dimensiones, mientras que la memoria solamente una <img src="ristra.png" alt="Ristra"></p>
+<p>Al llenar la memoria</p>
+<p><img src="relleno2.png" alt="relleno"></p>
+<p>···</p>
+<p>Mapa de memoria de video</p>
 
 
 
@@ -451,26 +511,10 @@
 </tbody></table>
 
 
+<ul>
+<li>Cada fila de pixeles ocupa 2k = 2048 dec = 800 hex</li>
+</ul>
 <hr>
-<h3 id="la-distribución-de-la-memoria-de-video">La distribución de la memoria de video</h3>
-<p>![[h3.jpg]]</p>
-<p>Son 16000 bytes, 320 x 200 pixeles, tenemos que saber dónde está cada uno.</p>
-<h4 id="caracteres">Caracteres</h4>
-<p>25 x 40, cada caracter tiene 8 x 8 pixeles</p>
-<p>Es todo un tema, no tiene dos dimensiones, cada fila se rellena y después va la siguiente.</p>
-<h4 id="mapa-de-memoria">Mapa de memoria</h4>
-<p>![[Pasted image 20241119104651.png]]</p>
-<p>Son posiciones del primer byte (el más a la izquierda de la pantalla) de cada una de las filas de toda la pantalla.</p>
-<p>Como ya sabemos que cada fila tiene 80 bytes, 50 en hexa.</p>
-<p>Si agarramos el primer byte, los 50 de la fila son todos consecutivos</p>
-<p>![[Pasted image 20241119105308.png]]</p>
-<p>Este otro mapa usa caracteres en lugar de pixeles.</p>
-<p>Hay más bytes que no use usan para pintar (spern)</p>
-<p>WIP</p>
-<h3 id="instrucciones-de-z80">Instrucciones de z80</h3>
-<p>![[h3.jpg]]</p>
-<p><a href="https://clrhome.org/table/">https://clrhome.org/table/</a></p>
-<p>![[Pasted image 20241119121935.png]]</p>
 <h3 id="reto-pintar-un-pixel-rojo"><strong>RETO</strong>: Pintar un pixel rojo</h3>
 <p>![[h3.jpg]]</p>
 <pre tabindex="0"><code>3E 88 32 00 C0 18 FE

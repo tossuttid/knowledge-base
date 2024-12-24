@@ -6,8 +6,15 @@
     <description>Recent content in Home on Apuntes sarampuela</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-ar</language>
-    <lastBuildDate>Sun, 08 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Dec 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why Is Math So Hard To Learn?</title>
+      <link>http://localhost:1313/math-fear/</link>
+      <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/math-fear/</guid>
+      <description>The following is my dirty summary of the precious work of Nic Barker link&#xA;Modern education system has a complicated relationship with mathematics. It remains one of the most feared subjects in school, and that extends all the way throught your adulthood.&#xA;We don&amp;rsquo;t have a definitive answer for why maths seems to standout in producing that poor learning experience and outcomes.&#xA;Common theories of other people The students are the problem Short attention span Don&amp;rsquo;t do homework The teachers are the problem Don&amp;rsquo;t understand deeply enough to teach properly The curriculum is the problem Too abstract, not practical Tryhard or slow Stardardised testing is the problem Short memorization, not foundational Punitive Nic&amp;rsquo;s theory: Math is just hard to learn ¯\(ツ)/¯</description>
+    </item>
     <item>
       <title>Dominando Ensamblador del Z80</title>
       <link>http://localhost:1313/dez80/</link>

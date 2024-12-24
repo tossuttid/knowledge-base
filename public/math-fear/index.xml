@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Math-Fears on Apuntes sarampuela</title>
+    <link>http://localhost:1313/math-fear/</link>
+    <description>Recent content in Math-Fears on Apuntes sarampuela</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Thu, 19 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/math-fear/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why Is Math So Hard To Learn?</title>
+      <link>http://localhost:1313/math-fear/why_dont_get_math/</link>
+      <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/math-fear/why_dont_get_math/</guid>
+      <description>5 steps to &amp;ldquo;I don&amp;rsquo;t get math&amp;rdquo; Oversimplified concepts force students to memorize &amp;ldquo;exceptions&amp;rdquo; Subtle changes to notation over time Small accumulated mistakes in exams Declining results, loss of confidence Abandonment </description>
+    </item>
+  </channel>
+</rss>

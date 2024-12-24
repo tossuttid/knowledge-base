@@ -13,15 +13,63 @@ Nivel 3: [Teoría](), [Práctica]();
 
 ---
 
-*1t001*
+*1t001, 1t007*
 
 ## Ciclo de ejecución de la CPU
 
-![hola](ciclo_ejecucion.jpg)
+![hola](ciclo_ejecucion.png)
 
 Fetch - Decode - Execute
 
 RAM: FFFF = 65536 b
+
+## Instrucciones de z80
+
+https://clrhome.org/table/
+
+### Las que usaremos en este nivel
+
+{{< rawhtml >}}
+
+<table><thead></thead>
+<tbody>
+  <tr>
+    <th>Instrucción</th>
+    <th>Operandos</th>
+  </tr>
+  <tr>
+    <td>3E</td>
+    <td>00</td>
+  </tr>
+  <tr>
+    <td colspan="2">Ensamblador</td>
+  </tr>
+  <tr>
+    <td colspan="2">ld a, 00</td>
+  </tr>
+</tbody>
+</table>
+
+<table><thead></thead>
+<tbody>
+  <tr>
+    <th>Instrucción</th>
+    <th>Operandos</th>
+  </tr>
+  <tr>
+    <td>32<br></td>
+    <td>00FF</td>
+  </tr>
+  <tr>
+    <td colspan="2">Ensamblador</td>
+  </tr>
+  <tr>
+    <td colspan="2">ld (FF00), a</td>
+  </tr>
+</tbody>
+</table>
+
+{{< /rawhtml >}}
 
 ---
 
@@ -58,7 +106,7 @@ De binario a hexadecimal - De hexadecimal a binario
 
 Parte de la memoria destinada a guardar la información de los píxeles en pantalla. Las imágenes están estructuradas en grupos de píxeles que el CRTC va leyendo de la memoria y enviando al monitor.
 
-Por defecto arranca en C000
+Por defecto arranca en C000 y ocupa 16000 bytes
 
 50hz refresco, produce parpadeo (flickering)
 
@@ -108,7 +156,15 @@ Cada caracter tiene ocho pixeles por lado.
 
 ···
 
-Las imágenes en pantallas poseen dos dimensiones, pero la memoria solamente una, esa ristra ![Ristra](ristra.png) se llena de a fila de pixeles por cada fila de caracteres.
+La pantalla posee dos dimensiones, mientras que la memoria solamente una ![Ristra](ristra.png)
+
+Al llenar la memoria
+
+![relleno](relleno2.png)
+
+···
+
+Mapa de memoria de video
 
 {{< rawhtml >}}
 
@@ -426,45 +482,11 @@ Las imágenes en pantallas poseen dos dimensiones, pero la memoria solamente una
 
 {{< /rawhtml >}}
 
+- Cada fila de pixeles ocupa 2k = 2048 dec = 800 hex
+
 ---
 
-### La distribución de la memoria de video
 
-![[h3.jpg]]
-
-Son 16000 bytes, 320 x 200 pixeles, tenemos que saber dónde está cada uno.
-
-#### Caracteres
-
-25 x 40, cada caracter tiene 8 x 8 pixeles
-
-Es todo un tema, no tiene dos dimensiones, cada fila se rellena y después va la siguiente.
-
-#### Mapa de memoria
-
-![[Pasted image 20241119104651.png]]
-
-Son posiciones del primer byte (el más a la izquierda de la pantalla) de cada una de las filas de toda la pantalla.
-
-Como ya sabemos que cada fila tiene 80 bytes, 50 en hexa.
-
-Si agarramos el primer byte, los 50 de la fila son todos consecutivos
-
-![[Pasted image 20241119105308.png]]
-
-Este otro mapa usa caracteres en lugar de pixeles.
-
-Hay más bytes que no use usan para pintar (spern)
-
-WIP
-
-### Instrucciones de z80
-
-![[h3.jpg]]
-
-https://clrhome.org/table/
-
-![[Pasted image 20241119121935.png]]
 
 ### **RETO**: Pintar un pixel rojo
 
