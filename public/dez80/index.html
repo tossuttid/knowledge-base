@@ -546,33 +546,31 @@
 <li>Cada fila de pixeles ocupa 2k = 2048 dec = 800 hex</li>
 </ul>
 <hr>
-<p><em>1p001</em></p>
-<h3 id="reto-pintar-un-pixel-rojo"><strong>RETO</strong>: Pintar un pixel rojo</h3>
-<p>![[h3.jpg]]</p>
+<p><em>1p003</em></p>
+<h2 id="pintar-un-pixel-rojo">Pintar un pixel rojo</h2>
 <pre tabindex="0"><code>3E 88 32 00 C0 18 FE
-</code></pre><h3 id="de-2-en-2">De 2 en 2</h3>
-<p>![[h3.jpg]]</p>
+</code></pre><p><em>1p007</em></p>
+<h2 id="ejemplo-de-2-en-2">Ejemplo: De 2 en 2</h2>
 <pre tabindex="0"><code>21 8888
 22 00C0
 18 FE
-</code></pre><h3 id="reto-domina-el-formato"><strong>RETO</strong>: Domina el formato</h3>
-<p>4px rojos</p>
+</code></pre><p><em>1p008</em></p>
+<h2 id="domina-el-formato">Domina el formato</h2>
+<h3 id="4px-rojos">4px rojos</h3>
 <pre tabindex="0"><code>3E FF 32 00 C0 18 FE
-</code></pre><p>24px, x4 grupos mismo color, rojo cyan amarillo, 21 bonus</p>
+</code></pre><h3 id="24px-x4-grupos-mismo-color-rojo-cyan-amarillo-21-bonus">24px, x4 grupos mismo color, rojo cyan amarillo, 21 bonus</h3>
 <pre tabindex="0"><code>21 FF F0 22 00 C0 21 0F F0 22 02 C0 21 0F FF 22 04 C0 18 FE
 
-Disassembly curiousity
-
 FF F0 0F F0 0F FF
-</code></pre><p>lo mismo que la anterior en grupos de 2px (12 total), 3e 21 bonus</p>
+</code></pre><h3 id="lo-mismo-que-la-anterior-en-grupos-de-2px-12-total-3e-21-bonus">lo mismo que la anterior en grupos de 2px (12 total), 3e 21 bonus</h3>
 <pre tabindex="0"><code>3E F3 32 00 C0 21 C3 CF 22 01 C0 18 FE
 
 F3 C3 CF
-</code></pre><p>8px, cada uno junto de color distinto</p>
+</code></pre><h3 id="8px-cada-uno-junto-de-color-distinto">8px, cada uno junto de color distinto</h3>
 <pre tabindex="0"><code>21 BC 5B 22 00 C0 18 FE
 
 BC 5B
-</code></pre><p>80px dibujo libre, todos los colores</p>
+</code></pre><h3 id="80px-dibujo-libre-todos-los-colores">80px dibujo libre, todos los colores</h3>
 <pre tabindex="0"><code>21 FF 7F 22 00 C0 21 3F 1F 22 02 C0
 21 0F 87 22 04 C0 21 C3 E1 22 06 C0
 21 F0 70 22 08 C0 21 30 10 22 0A C0
@@ -584,8 +582,7 @@ BC 5B
 21 00 88 22 1C C0 21 CC EE 22 1E C0
 
 18 FE
-</code></pre><hr>
-
+</code></pre>
 
     </article>
 </body>

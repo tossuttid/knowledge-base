@@ -517,21 +517,17 @@ Mapa de memoria de video
 
 ---
 
-*1p001*
+*1p003*
 
-
-
-### **RETO**: Pintar un pixel rojo
-
-![[h3.jpg]]
+## Pintar un pixel rojo
 
 ```
 3E 88 32 00 C0 18 FE
 ```
 
-### De 2 en 2
+*1p007*
 
-![[h3.jpg]]
+## Ejemplo: De 2 en 2
 
 ```
 21 8888
@@ -539,25 +535,25 @@ Mapa de memoria de video
 18 FE
 ```
 
-### **RETO**: Domina el formato
+*1p008*
 
-4px rojos
+## Domina el formato
+
+### 4px rojos
 
 ```
 3E FF 32 00 C0 18 FE
 ```
 
-24px, x4 grupos mismo color, rojo cyan amarillo, 21 bonus
+### 24px, x4 grupos mismo color, rojo cyan amarillo, 21 bonus
 
 ```
 21 FF F0 22 00 C0 21 0F F0 22 02 C0 21 0F FF 22 04 C0 18 FE
 
-Disassembly curiousity
-
 FF F0 0F F0 0F FF
 ```
 
-lo mismo que la anterior en grupos de 2px (12 total), 3e 21 bonus
+### lo mismo que la anterior en grupos de 2px (12 total), 3e 21 bonus
 
 ```
 3E F3 32 00 C0 21 C3 CF 22 01 C0 18 FE
@@ -565,7 +561,7 @@ lo mismo que la anterior en grupos de 2px (12 total), 3e 21 bonus
 F3 C3 CF
 ```
 
-8px, cada uno junto de color distinto
+### 8px, cada uno junto de color distinto
 
 ```
 21 BC 5B 22 00 C0 18 FE
@@ -573,7 +569,7 @@ F3 C3 CF
 BC 5B
 ```
 
-80px dibujo libre, todos los colores
+### 80px dibujo libre, todos los colores
 
 ```
 21 FF 7F 22 00 C0 21 3F 1F 22 02 C0
@@ -588,5 +584,3 @@ BC 5B
 
 18 FE
 ```
-
----
